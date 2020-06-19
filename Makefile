@@ -37,6 +37,10 @@ BUILD_IMAGE_PATH=build/image/blade
 # cache downloaded file
 BUILD_TARGET_CACHE=$(BUILD_TARGET)/cache
 
+# chaosblade-exec-test
+BLADE_EXEC_TEST_PROJECT=https://github.com/120742056/chaosblade-exec-test.git
+BLADE_EXEC_TEST_BRANCH=master
+
 # chaosblade-exec-os
 BLADE_EXEC_OS_PROJECT=https://github.com/chaosblade-io/chaosblade-exec-os.git
 BLADE_EXEC_OS_BRANCH=master
@@ -66,7 +70,7 @@ ifeq ($(GOOS), linux)
 endif
 
 # build chaosblade package and image
-build: pre_build build_cli build_os build_docker build_kubernetes build_cplus
+build: pre_build build_cli build_os build_test build_docker build_kubernetes build_cplus
 	# tar package
 	tar zcvf $(BUILD_TARGET_PKG_FILE_PATH) -C $(BUILD_TARGET) $(BUILD_TARGET_DIR_NAME)
 
@@ -89,6 +93,20 @@ build_with_linux: pre_build build_linux_with_arg
 build_cli:
 	# build blade cli
 	$(GO) build $(GO_FLAGS) -o $(BUILD_TARGET_PKG_DIR)/blade ./cli
+
+
+# build test
+build_test:
+ifneq ($(BUILD_TARGET_CACHE)/chaosblade-exec-test, $(wildcard $(BUILD_TARGET_CACHE)/chaosblade-exec-test))
+	git clone -b $(BLADE_EXEC_TEST_BRANCH) $(BLADE_EXEC_TEST_PROJECT) $(BUILD_TARGET_CACHE)/chaosblade-exec-test
+else
+ifdef ALERTMSG
+	$(error $(ALERTMSG))
+endif
+	git -C $(BUILD_TARGET_CACHE)/chaosblade-exec-test pull origin $(BLADE_EXEC_TEST_BRANCH)
+endif
+	make -C $(BUILD_TARGET_CACHE)/chaosblade-exec-test
+	cp $(BUILD_TARGET_CACHE)/chaosblade-exec-test/$(BUILD_TARGET_BIN)/* $(BUILD_TARGET_BIN)
 
 # build os
 build_os:
