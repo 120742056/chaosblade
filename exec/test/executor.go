@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package os
+package test
 
 import (
 	"context"
 	"fmt"
 
-	"github.com/chaosblade-io/chaosblade-exec-os/exec/model"
+	"github.com/120742056/chaosblade-exec-test/exec/model"
 	"github.com/chaosblade-io/chaosblade-spec-go/channel"
 	"github.com/chaosblade-io/chaosblade-spec-go/spec"
 )
