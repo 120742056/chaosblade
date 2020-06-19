@@ -1,8 +1,9 @@
-module github.com/chaosblade-io/chaosblade
+module github.com/120742056/chaosblade
 
 go 1.13
 
 require (
+	github.com/chaosblade-io/chaosblade v0.6.0
 	github.com/chaosblade-io/chaosblade-exec-docker v0.6.0
 	github.com/chaosblade-io/chaosblade-exec-os v0.6.0
 	github.com/chaosblade-io/chaosblade-operator v0.6.0

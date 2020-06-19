@@ -33,6 +33,7 @@ import (
 	"github.com/chaosblade-io/chaosblade/exec/jvm"
 	"github.com/chaosblade-io/chaosblade/exec/kubernetes"
 	"github.com/chaosblade-io/chaosblade/exec/os"
+	"github.com/120742056/chaosblade/exec/test"
 	"github.com/chaosblade-io/chaosblade/version"
 )
 
@@ -116,7 +117,9 @@ func (ec *baseExpCommandService) registerSubCommands() {
 	// register jvm framework commands
 	ec.registerJvmExpCommands()
 	// register cplus
-	ec.registerCplusExpCommands()
+	//ec.registerCplusExpCommands()
+	// register test command
+	ec.registerTestExpCommands()
 	// register docker command
 	ec.registerDockerExpCommands()
 	// register k8s command
@@ -169,6 +172,22 @@ func (ec *baseExpCommandService) registerCplusExpCommands() []*modelCommand {
 		cplusCommands = append(cplusCommands, command)
 	}
 	return cplusCommands
+}
+
+// registerTestExpCommands
+func (ec *baseExpCommandService) registerTestExpCommands() []*modelCommand {
+	file := path.Join(util.GetBinPath(), "chaosblade-test-spec.yaml")
+	models, err := util.ParseSpecsToModel(file, test.NewExecutor())
+	if err != nil {
+		return nil
+	}
+	testCommands := make([]*modelCommand, 0)
+	for idx := range models.Models {
+		model := &models.Models[idx]
+		command := ec.registerExpCommand(model, "")
+		testCommands = append(testCommands, command)
+	}
+	return testCommands
 }
 
 // registerDockerExpCommands

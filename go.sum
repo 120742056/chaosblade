@@ -24,6 +24,7 @@ contrib.go.opencensus.io/exporter/ocagent v0.6.0/go.mod h1:zmKjrJcdo0aYcVS7bmEeS
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 git.apache.org/thrift.git v0.0.0-20180902110319-2566ecd5d999/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=
 git.apache.org/thrift.git v0.12.0/go.mod h1:fPE2ZNJGynbRyZ4dJvy6G277gSllfV2HJqblrnkyeyg=
+github.com/120742056/chaosblade v0.6.0 h1:6fdYoVU1WJA3W9mfvmDfYX08heR7FeHyUeenVVt5nU4=
 github.com/Azure/azure-pipeline-go v0.2.1/go.mod h1:UGSo8XybXnIGZ3epmeBw7Jdz+HiUVpqIlpz/HKHylF4=
 github.com/Azure/azure-pipeline-go v0.2.2/go.mod h1:4rQ/NZncSvGqNkkOsNpOU1tgoNuIlp9AfUH5G1tvCHc=
 github.com/Azure/azure-sdk-for-go v16.2.1+incompatible/go.mod h1:9XXNKU+eRnpl9moKnB4QOLf1HestfXbmab5FXxiDBjc=
@@ -139,6 +140,8 @@ github.com/cespare/xxhash/v2 v2.1.0/go.mod h1:dgIUBU3pDso/gPgZ1osOZ0iQf77oPR28Tj
 github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/chai2010/gettext-go v0.0.0-20160711120539-c6fed771bfd5/go.mod h1:/iP1qXHoty45bqomnu2LM+VVyAEdWN+vtSHGlQgyxbw=
 github.com/chai2010/gettext-go v0.0.0-20170215093142-bf70f2a70fb1/go.mod h1:/iP1qXHoty45bqomnu2LM+VVyAEdWN+vtSHGlQgyxbw=
+github.com/chaosblade-io/chaosblade v0.6.0 h1:aJJTi36F2DTFp0Yht530rFQLNXxwmTQB+5yFAYs/h20=
+github.com/chaosblade-io/chaosblade v0.6.0/go.mod h1:ikVY+aJuXMx7yZzDDRocWt4fumgaEsJ8q84r7sdXP28=
 github.com/chaosblade-io/chaosblade-exec-docker v0.4.1 h1:bQ7OndsHdOI0Pjax/FfIJptYJBrkbMAydPPhmaRL4c8=
 github.com/chaosblade-io/chaosblade-exec-docker v0.4.1/go.mod h1:dODgtc/L+ZXIapL0EzCS+4uT/TORasqeDveiywq3y1E=
 github.com/chaosblade-io/chaosblade-exec-docker v0.4.2-0.20200110075138-e482011049e1 h1:khJjf01mEaeytiuOiFGs1O3bba60BQvPyAN13T4bpGQ=
