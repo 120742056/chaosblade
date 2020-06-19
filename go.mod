@@ -4,8 +4,8 @@ go 1.13
 
 require (
 	github.com/120742056/chaosblade-exec-test v0.1.0
-	github.com/120742056/chaosblade-exec-test/exec v0.0.0-20200619075059-ce446000ff3e // indirect
-	github.com/120742056/chaosblade-exec-test/exec/model v0.0.0-20200619075059-ce446000ff3e
+	github.com/120742056/chaosblade-exec-test/exec v0.0.0-20200619080736-e4cdc8cd43ce // indirect
+	github.com/120742056/chaosblade-exec-test/exec/model v0.0.0-20200619080736-e4cdc8cd43ce
 	github.com/chaosblade-io/chaosblade v0.6.0
 	github.com/chaosblade-io/chaosblade-exec-docker v0.6.0
 	github.com/chaosblade-io/chaosblade-exec-os v0.6.0
